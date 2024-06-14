@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    use_sim_time: true
+    input_pointcloud: "/velodyne_points" # string
+    input_odom: "/odom_raw"
+    threshold_align_fitness_score: 1.0
+    save_pcd_dir: "/home/june/data/ros1/231202TCEX/map_material/"
+    threshold_dist_save_pcd: 10.0
+    Submap_Range: 60.0 
+    SumAlign_fitnessScore: 500.0 
+    leaf_size: 5.0

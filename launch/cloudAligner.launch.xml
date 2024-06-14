@@ -1,0 +1,20 @@
+<launch>
+  <!--set_parameter name="use_sim_time" value="true"/-->
+
+  <arg name="param_file" default="$(find-pkg-share pcl_lab)/config/aligner.param.yaml"/>
+  <!--arg name="param_file" default="$(find-pkg-share pcl_lab)/config/pcl_lab.param.yaml"/-->
+  
+  <node pkg="pcl_lab" exec="cloudAligner" name="cloudAligner" output="screen">  
+    <param from="$(var param_file)"/>
+  </node>
+
+  <!-- Static TF from base link to laser -->
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="base_link_to_lidar" args="0 0 0 0 0 0 /base_link /lidar" />
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="base_link_to_imu" args="0 0 0 0 0 0 /base_link /imu" />
+  
+  <!-- rviz2-->
+  <arg name="rviz_config_path" default="$(find-pkg-share pcl_lab)/launch/align.rviz" />  
+  <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)">
+  </node>
+
+</launch>

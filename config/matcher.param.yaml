@@ -1,0 +1,26 @@
+/**:
+  ros__parameters:
+    use_sim_time: true
+    pointcloud_map: "/home/june/data/ros1/231202TCEX/map_material/PointcloudMap.pcd" # string
+    input_pointcloud: "/velodyne_points" # string
+    input_odom: "/odom_raw"
+    input_imu: "/imu"
+    threshold_align_fitness_score: 1.0
+    save_pcd_dir: "/home/june/data/ros1/231202TCEX/map_material/"
+    threshold_dist_save_pcd: 10.0
+    Submap_Range: 60.0 
+    SumAlign_fitnessScore: 500.0 
+    leaf_size: 0.5 #0.75 #0.5
+    matching_leaf_size: 3.0 #0.75 #0.5
+    threshold_align_fitness_score : 5.0 
+    threshold_score_align_with_map: 5.0 #5.0
+    threshold_adjust_pose: 5.0 #-2.2
+    threshold_EKF_align_fitness_score: 0.5
+    threshold_mh_dist : 3.0 #3.0 
+    GICP_TransformationEpsilon: 0.1
+    GICP_EuclideanFitnessEpsilon: 0.1
+    GICP_MaximumIterations: 30 #30
+    NDT_OMP_TransformationEpsilon: 0.1
+    NDT_OMP_StepSize: 0.5 #1.0 #0.75
+    NDT_OMP_Resolution: 5.0
+    NDT_OMP_MaximumIterations: 10
